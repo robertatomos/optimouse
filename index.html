@@ -1,1 +1,85 @@
-Kevin Go Nuts
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a id="optimouseBut" class="navbar-brand" href="#">OPTIMOUSE</a>
+    </div>
+    <div>
+      <ul class="nav navbar-nav">
+        <li id="platformBut" class="inactive"><a href="#">PLATFORM</a></li>
+        <li id="companyBut"><a class="inactive"href="#">COMPANY</a></li>
+        <li id="contactBut"><a class="inactive" href="#">CONTACT US</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container">
+    <div id="optimousePage" class="show">
+        optimouse
+    </div>
+    <div id="platformPage" class="noshow">
+        platform
+    </div>
+    <div id="companyPage" class="noshow">
+        company
+    </div>
+    <div id="contactPage" class="noshow">
+        contact
+    </div>
+</div>
+
+<script>
+    $("#optimouseBut").click(function(){
+        $("#platformBut").attr('class', 'inactive');
+        $("#companyBut").attr('class', 'inactive');
+        $("#contactBut").attr('class', 'inactive');
+        $("#optimousePage").attr('class', 'show');
+        $("#platformPage").attr('class', 'noshow');
+        $("#companyPage").attr('class', 'noshow');
+        $("#contactPage").attr('class', 'noshow');
+    });
+    $("#platformBut").click(function(){
+        $("#platformBut").attr('class', 'active');
+        $("#companyBut").attr('class', 'inactive');
+        $("#contactBut").attr('class', 'inactive');
+        $("#optimousePage").attr('class', 'noshow');
+        $("#platformPage").attr('class', 'show');
+        $("#companyPage").attr('class', 'noshow');
+        $("#contactPage").attr('class', 'noshow');
+    });
+    $("#companyBut").click(function(){
+        $("#platformBut").attr('class', 'inactive');
+        $("#companyBut").attr('class', 'active');
+        $("#contactBut").attr('class', 'inactive');
+        $("#optimousePage").attr('class', 'noshow');
+        $("#platformPage").attr('class', 'noshow');
+        $("#companyPage").attr('class', 'show');
+        $("#contactPage").attr('class', 'noshow');
+    });
+    $("#contactBut").click(function(){
+        $("#platformBut").attr('class', 'inactive');
+        $("#companyBut").attr('class', 'inactive');
+        $("#contactBut").attr('class', 'active');
+        $("#optimousePage").attr('class', 'noshow');
+        $("#platformPage").attr('class', 'noshow');
+        $("#companyPage").attr('class', 'noshow');
+        $("#contactPage").attr('class', 'show');
+    });
+</script>
+</body>
+</html>
+
+
