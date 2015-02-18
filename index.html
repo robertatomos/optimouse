@@ -25,6 +25,7 @@
       <ul class="nav navbar-nav">
         <li id="platformBut" class="inactive"><a href="#">PLATFORM</a></li>
         <li id="companyBut"><a class="inactive"href="#">COMPANY</a></li>
+        <li id="ResearchBut"><a class="inactive" href="#">RESEARCH</a></li>
         <li id="contactBut"><a class="inactive" href="#">CONTACT US</a></li>
       </ul>
     </div>
@@ -34,7 +35,7 @@
 <div class="container">
     <div id="optimousePage" class="show">
         <h1>Get back to what matters</h1>
-        <h4>An Automated Feeding Solution for Laboratories</h4>
+        <h4>An Automated Feeding Solution for Animal Laboratories</h4>
         <div id="homeQuotes">
 
         </div>
@@ -44,6 +45,9 @@
     </div>
     <div id="companyPage" class="noshow">
         company
+    </div>
+    <div id="ResearchPage" class="noshow">
+        Research
     </div>
     <div id="contactPage" class="noshow">
         <div id="contactBackground">
@@ -90,40 +94,60 @@
         $("#platformBut").attr('class', 'inactive');
         $("#companyBut").attr('class', 'inactive');
         $("#contactBut").attr('class', 'inactive');
+        $("#ResearchBut").attr('class', 'inactive');
         $("#optimousePage").attr('class', 'show');
         $("#platformPage").attr('class', 'noshow');
         $("#companyPage").attr('class', 'noshow');
         $("#contactPage").attr('class', 'noshow');
+        $("#ResearchPage").attr('class', 'noshow');
     });
     $("#platformBut").click(function(){
         clearInterval(quoteInterval);
         $("#platformBut").attr('class', 'active');
         $("#companyBut").attr('class', 'inactive');
         $("#contactBut").attr('class', 'inactive');
+        $("#ResearchBut").attr('class', 'inactive');
         $("#optimousePage").attr('class', 'noshow');
         $("#platformPage").attr('class', 'show');
         $("#companyPage").attr('class', 'noshow');
         $("#contactPage").attr('class', 'noshow');
+        $("#ResearchPage").attr('class', 'noshow');
     });
     $("#companyBut").click(function(){
         clearInterval(quoteInterval);
         $("#platformBut").attr('class', 'inactive');
         $("#companyBut").attr('class', 'active');
         $("#contactBut").attr('class', 'inactive');
+        $("#ResearchBut").attr('class', 'inactive');
         $("#optimousePage").attr('class', 'noshow');
         $("#platformPage").attr('class', 'noshow');
         $("#companyPage").attr('class', 'show');
         $("#contactPage").attr('class', 'noshow');
+        $("#ResearchPage").attr('class', 'noshow');
     });
     $("#contactBut").click(function(){
         clearInterval(quoteInterval);
         $("#platformBut").attr('class', 'inactive');
         $("#companyBut").attr('class', 'inactive');
         $("#contactBut").attr('class', 'active');
+        $("#ResearchBut").attr('class', 'inactive');
         $("#optimousePage").attr('class', 'noshow');
         $("#platformPage").attr('class', 'noshow');
         $("#companyPage").attr('class', 'noshow');
         $("#contactPage").attr('class', 'show');
+        $("#ResearchPage").attr('class', 'noshow');
+    });
+    $("#ResearchBut").click(function(){
+        clearInterval(quoteInterval);
+        $("#platformBut").attr('class', 'inactive');
+        $("#companyBut").attr('class', 'inactive');
+        $("#contactBut").attr('class', 'inactive');
+        $("#ResearchBut").attr('class', 'active');
+        $("#optimousePage").attr('class', 'noshow');
+        $("#platformPage").attr('class', 'noshow');
+        $("#companyPage").attr('class', 'noshow');
+        $("#contactPage").attr('class', 'noshow');
+        $("#ResearchPage").attr('class', 'show');
     });
     
     function newQuote(quote){
