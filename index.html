@@ -4,17 +4,22 @@
   <title>Bootstrap Case</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="/assets/css/screen.css?2c152ab4040239b9e759035ebd576037746cfaf0" type="text/css" rel="stylesheet"/>
+<link href="/assets/css/fonts.css?2c152ab4040239b9e759035ebd576037746cfaf0" type="text/css" rel="stylesheet"/>
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="" src="">
+  <link rel="shortcut icon" href="res/mouse.ico">
 </head>
 <body>
 
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a id="optimouseBut" class="navbar-brand" href="#">OPTIMOUSE</a>
+      <a id="optimouseBut" class="navbar-brand" href="#">LOGO</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
@@ -28,7 +33,11 @@
   
 <div class="container">
     <div id="optimousePage" class="show">
-        optimouse
+        <h1>Get back to what matters</h1>
+        <h4>An Automated Feeding Solution for Laboratories</h4>
+        <div id="homeQuotes">
+
+        </div>
     </div>
     <div id="platformPage" class="noshow">
         platform
@@ -37,12 +46,47 @@
         company
     </div>
     <div id="contactPage" class="noshow">
-        contact
+        <div id="contactBackground">
+            <h1>Contact Optimouse</h1>
+            <h4>Get in touch with us to get the ball rolling!<h4>
+            <table class="contactFunctions" >
+                <tr>
+                    <td class="contactBox">
+                        <img src="res/email.jpeg">
+                        <p class="contactText1">CORPORATE EMAIL</p>
+                        <p class="contactText2">optimouse.co@gmail.com</p>
+                    <td>
+                    <td class="contactBox">
+                        <img src="res/phone.jpeg">
+                        <p class="contactText1">KEVIN KILLY, COO</p>
+                        <p class="contactText2">(604) 813 4741</p>
+                    </td>
+                    <td class="contactBox">
+                        <img src="res/phone.jpeg">
+                        <p class="contactText1">ROBERT LEPINE, CEO</p>
+                        <p class="contactText2">(778) 689 8720</p>
+                    <td>
+                    <td class="contactBox">
+                        <img src="res/phone.jpeg">
+                        <p class="contactText1">KENNY WOO, CTO</p>
+                        <p class="contactText2">(604) 808 9066</p>
+                    <td>
+                </tr>
+            </table>
+        </div>
     </div>
-</div>
 
 <script>
+    var quoteInterval = null;
+    var currQuote = null;
+    $(document).ready(function(){
+        var currQuote = 1;
+        newQuote(currQuote);
+        quoteInterval = setInterval("newQuote(currQuote)", 5500);
+    });
     $("#optimouseBut").click(function(){
+        clearInterval(quoteInterval);
+        quoteInterval = setInterval("newQuote(currQuote)", 5500);
         $("#platformBut").attr('class', 'inactive');
         $("#companyBut").attr('class', 'inactive');
         $("#contactBut").attr('class', 'inactive');
@@ -52,6 +96,7 @@
         $("#contactPage").attr('class', 'noshow');
     });
     $("#platformBut").click(function(){
+        clearInterval(quoteInterval);
         $("#platformBut").attr('class', 'active');
         $("#companyBut").attr('class', 'inactive');
         $("#contactBut").attr('class', 'inactive');
@@ -61,6 +106,7 @@
         $("#contactPage").attr('class', 'noshow');
     });
     $("#companyBut").click(function(){
+        clearInterval(quoteInterval);
         $("#platformBut").attr('class', 'inactive');
         $("#companyBut").attr('class', 'active');
         $("#contactBut").attr('class', 'inactive');
@@ -70,6 +116,7 @@
         $("#contactPage").attr('class', 'noshow');
     });
     $("#contactBut").click(function(){
+        clearInterval(quoteInterval);
         $("#platformBut").attr('class', 'inactive');
         $("#companyBut").attr('class', 'inactive');
         $("#contactBut").attr('class', 'active');
@@ -78,6 +125,23 @@
         $("#companyPage").attr('class', 'noshow');
         $("#contactPage").attr('class', 'show');
     });
+    
+    function newQuote(quote){
+        $("html, body").animate({scrollLeft: $("#homeQuotes").offset().left}, 800);
+        $("#homeQuotes").empty();
+        if (quote == 1){
+            $("#homeQuotes").append("<p class='quote'>60% of the time, our product works everytime.</p>");
+            currQuote = 2;
+        }
+        if (quote == 2){
+            $("#homeQuotes").append("<p class='quote'>Our CEO approves our product</p>"); 
+            currQuote = 3;
+        }
+        if (quote == 3){
+            $("#homeQuotes").append("<p class='quote'>We employ ourselves!</p>"); 
+            currQuote = 1;
+        }
+    }
 </script>
 </body>
 </html>
